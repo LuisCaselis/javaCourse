@@ -4,13 +4,27 @@ import java.util.Scanner;
 
 public class Cuadraticas {
 
+
+
+    public static void main(String[] args) {
+        ResolveEcuation object = new ResolveEcuation();
+
+
+        object.formulaGeneral();
+    }
+
+
+}
+
+class ResolveEcuation{
     static int A = 0;
     static int B = 0;
     static int C = 0;
 
-    public static void main(String[] args) {
+
+    static void formulaGeneral(){
         Scanner scan = new Scanner(System.in);
-        Cuadraticas object = new Cuadraticas();
+        double root, resultPos, resultNeg;
 
         do{
             System.out.print("a = ");
@@ -21,17 +35,19 @@ public class Cuadraticas {
         System.out.print("c = ");
         C = scan.nextInt();
 
-        object.formulaGeneral();
+        int temp = B*B - 4*(A*C);
+        if(temp<=0){
+            System.out.println("Imaginario :D");
+        }else{
+            root = Math.sqrt(temp);
+            resultPos = (-B + root) / (2*A);
+            resultNeg = (-B - root) / (2*A);
+            System.out.printf("+x = %.2f | -x = %.2f", resultPos, resultNeg);
+        }
+
+
+
     }
 
-    static void formulaGeneral(){
 
-        double root, resultPos, resultNeg;
-
-        root = Math.sqrt(B*B - 4*(A*C));
-        resultPos = (-B + root) / (2*A);
-        resultNeg = (-B - root) / (2*A);
-
-        System.out.printf("+x = %.2f | -x = %.2f", resultPos, resultNeg);
-    }
 }

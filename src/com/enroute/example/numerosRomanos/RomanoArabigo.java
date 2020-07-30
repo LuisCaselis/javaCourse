@@ -5,10 +5,21 @@ import java.util.Scanner;
 
 public class RomanoArabigo {
 
-    static HashMap<String, Integer> values = new HashMap<>();
 
     public static void main(String[] args) {
-        RomanoArabigo object = new RomanoArabigo();
+        RomanConvertion object = new RomanConvertion();
+        object.convertRomans();
+    }
+
+
+}
+
+class RomanConvertion{
+
+    static HashMap<String, Integer> values = new HashMap<>();
+
+    public void convertRomans(){
+
         Scanner scanner = new Scanner(System.in);
         String romanNum;
         boolean valid;
@@ -32,11 +43,6 @@ public class RomanoArabigo {
             }
         }while (valid==false);
 
-        object.convertRomans(romanNum);
-
-    }
-
-    public void convertRomans(String romanNum){
         int sum = 0;
         int[] digit = new int[romanNum.length()];
         for(int i=0; i<romanNum.length(); i++){

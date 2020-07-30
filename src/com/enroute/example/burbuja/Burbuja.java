@@ -8,19 +8,21 @@ public class Burbuja {
 
     public static void main(String[] args) {
         Burbuja burbuja = new Burbuja();
-        Scanner scanner = new Scanner(System.in);
-        int [] numbers = new int[10];
-        //int [] numbers = {1, 3, 5, 10, 40, 30, 50, 63};
 
-        System.out.print("Insert numbers: ");
-        for (int i=0; i<10; i++){
-            numbers[i]=scanner.nextInt();
-        }
-
-        burbuja.ordenar(numbers);
+        burbuja.ordenar();
     }
 
-    public void ordenar(int[] numbers){
+    public void ordenar(){
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("How many numbers:");
+        int size = scanner.nextInt();
+        int [] numbers = new int[size];
+
+        System.out.print("Insert numbers: ");
+        for (int i=0; i<size; i++){
+            numbers[i]=scanner.nextInt();
+        }
 
         int temp = 0;
         boolean sorted = true;

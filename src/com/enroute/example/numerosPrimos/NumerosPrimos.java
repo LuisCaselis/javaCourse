@@ -5,16 +5,22 @@ import java.util.Scanner;
 public class NumerosPrimos {
 
     public static void main(String[] args) {
-        NumerosPrimos object = new NumerosPrimos();
+        SolvePrime object = new SolvePrime();
+
+        System.out.println(object.isItPrime());
+    }
+
+}
+
+class SolvePrime{
+
+    public boolean isItPrime(){
+
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Is it prime: ");
-        int numero = scanner.nextInt();
+        int num = scanner.nextInt();
 
-        System.out.println(object.isItPrime(numero));
-    }
-
-    public boolean isItPrime(int num){
         boolean result = true;
 
         for(int i=2; i<num/2; i++){

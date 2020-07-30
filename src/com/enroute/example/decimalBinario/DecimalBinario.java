@@ -7,16 +7,21 @@ import java.util.Scanner;
 public class DecimalBinario {
 
     public static void main(String[] args) {
-        DecimalBinario objectBinary = new DecimalBinario();
+        Convertion objectBinary = new Convertion();
+
+        objectBinary.toBinary();
+    }
+
+
+}
+
+class Convertion{
+
+    public static void toBinary(){
 
         Scanner scan = new Scanner(System.in);
         System.out.print("Decimal to Binary: ");
         int num = scan.nextInt();
-
-        objectBinary.toBinary(num);
-    }
-
-    public static void toBinary(int num){
 
         List<Integer> binaryNum = new ArrayList<Integer>();
 
@@ -29,4 +34,5 @@ public class DecimalBinario {
             System.out.print(digit);
         }
     }
+
 }
